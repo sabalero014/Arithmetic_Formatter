@@ -1,11 +1,13 @@
-lista = ["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]
-mixed_list = [{1, 2}, [5, 6, 7]]
+# Python program to iterate 
+# over 3 lists using zip function 
 
-# number tuple
-number_tuple = (3, 4)
+num = [10, 22, 34]
+color = ['red', 'while', 'black'] 
+value = [255, 256,664]
 
-# inserting a tuple to the list
-mixed_list.insert(1, number_tuple)
-
-
-print('Updated List:', mixed_list)
+# iterates over 3 lists and excutes 
+# 2 times as len(value)= 2 which is the 
+# minimum among all the three 
+for (n,c,v) in (num, color, value):
+    print(n,c,v)
+    print(f'renglon{n}')
