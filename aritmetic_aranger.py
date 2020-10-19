@@ -75,9 +75,11 @@ def arithmetic_arranger(problems,display):
     toditos = list(zip(primero,operador, segundo,resultados,longitud))
     conjunto(resultados)
     conjunto(longitud)
+
     """print('¿Cuál es mejor?')
     print(f'Toditos: muestra cada operación con su resultado \n{toditos}')
     print(f"Todos: muestra cada operador por separado. \n{todos}") #--- > esta es mejor"""
+
     reng1="" #primer numero
     reng2=""#simbolo mas segundo numero
     divisor=""#lineas horizontales
@@ -88,10 +90,13 @@ def arithmetic_arranger(problems,display):
         reng2  += i[1]+" "+ i[2].rjust(i[4],relleno) + "    "
         divisor+= "-"* len("  "+ i[0].rjust(i[4],relleno))+"    "
         reng3  += str(i[3]).rjust(len("-"* len("  "+ i[0].rjust(i[4],relleno))),relleno)+"    "
+
+    """#para chequear
     print(reng1)
     print(reng2)
     print(divisor)
-    print(reng3)
+    print(reng3)"""
+    arranged_problems =print(f'{reng1}\n{reng2}\n{divisor}\n{reng3}')
 
 #    return arranged_problems
 
