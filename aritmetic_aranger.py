@@ -1,4 +1,5 @@
-def arithmetic_arranger(problems):
+def arithmetic_arranger(problems,est = True):
+    if est != True: exit()
     # Variables a usar
     todos = []  # todos los listados
     resultados = []
@@ -7,6 +8,7 @@ def arithmetic_arranger(problems):
     operador = []
     longitud = []
     relleno = " "
+    check2 = "Error: Operator must be '+' or '-'."
     # check1 :5 problemas
     if len(problems) > 5:
         # máximo de 5 problemas
@@ -36,31 +38,35 @@ def arithmetic_arranger(problems):
         elif i == "-":
             pass
         else:
-            arranged_problems = print("Error: Operator must be '+' or '-'.")
+            arranged_problems = print(check2)
+            #print("Error: Operator must be '+' or '-'.")
             return arranged_problems
-    def entero(entrada1):
-        # check3: enteros
-        try:
-            a = int(entrada1)
-            #arranged_problems = 'ok'
-            #return arranged_problems
-        except:
-            arranged_problems = print('Error: Numbers must only contain digits.')
-            exit()
-            return arranged_problems
-        # check4: hasta 4 digitos
+    # check4: hasta 4 digitos
     def largo (entrada):
         if len(entrada) > 4:
             arranged_problems = print('Error: Numbers cannot be more than four digits.')
             return arranged_problems
     for i in toditos:
+        # check4: hasta 4 digitos
+        if len(i[0]) > 4:
+            arranged_problems = print('Error: Numbers cannot be more than four digits.')
+            #print('Error: Numbers cannot be more than four digits.')
+            return arranged_problems
+        if len(i[2]) > 4:
+            arranged_problems = print('Error: Numbers cannot be more than four digits.')
+            #print('Error: Numbers cannot be more than four digits.')
+            return arranged_problems
         #check enteros a cada valores
         try:
             a = int(i[0])
             b = int(i[2])
-        except:
+        except ValueError:
             arranged_problems = print('Error: Numbers must only contain digits.')
-            exit()
+            #exit()
+            return arranged_problems
+        except:
+            arranged_problems = print('otra cosa')
+            #exit()
             return arranged_problems
         # check2: operadores + o - y hace la operatoria
         if i[1] == '+':
@@ -70,9 +76,9 @@ def arithmetic_arranger(problems):
         elif i[1] == '-':
             resta = a-b
             resultados.append(resta)
-            # print(f'Restando: {resta}')
+            #print(f'Restando: {resta}')
         else:
-            arranged_problems = print("Error: Operator must be '+' or '-'.")
+            arranged_problems = print(check2)
             return arranged_problems
         longitud.append(max(len(i[0]), len(i[2])))
     # print(resultados)
@@ -91,10 +97,12 @@ def arithmetic_arranger(problems):
         divisor += "-" * len("  " + i[0].rjust(i[4], relleno)) + "    "
         reng3 += str(i[3]).rjust(len("-" * len("  " + i[0].rjust(i[4], relleno))), relleno) + "    "
 
-    arranged_problems = print(f'{reng1}\n{reng2}\n{divisor}\n{reng3}')
+    arranged_problems = print(f'{reng1.rstrip()}\n{reng2.rstrip()}\n{divisor.rstrip()}\n{reng3.rstrip()}')
     return arranged_problems
 
+entrada =["3 + 855", "3801 - 2", "45 + 43", "123 + 49"]
+arithmetic_arranger(entrada)
+print(len("    3      3801      45      123"))
 
-arithmetic_arranger(["98 + 3g5", "3801 - 2", "45 + 43", "123 + 49"])
-# print("   ")
-# print("  11      3801      1      123         1\n+  4    - 2999    + 2    +  49    - 9380\n----    ------    ---    -----    ------")
+print("    3      3801      45      123\n+ 855    -    2    + 43    +  49\n-----    ------    ----    -----")
+print((len("    3      3801      45      123")))
