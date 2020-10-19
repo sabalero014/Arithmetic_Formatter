@@ -1,6 +1,6 @@
 def arithmetic_arranger(problems,display):
     #Variables a usar
-    separados = []
+    todos = [] #todos los listados
     resultados= []
     primero=[]
     segundo = []
@@ -34,8 +34,12 @@ def arithmetic_arranger(problems,display):
                 exit()
     entero(primero)
     entero(segundo)
-
-
+    def conjunto (listado):
+        return todos.append(listado)
+    conjunto(primero)
+    conjunto(operador)
+    conjunto(segundo)
+    
 
 #    return arranged_problems
 
