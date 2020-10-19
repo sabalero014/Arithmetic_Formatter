@@ -27,29 +27,12 @@ def arithmetic_arranger(problems):
     """print(f'Primeros: {primero}')
     print(f'segundos: {segundo}')
     print(f'Operadores {operador}')"""
+    """entero(primero)
+    entero(segundo)"""
 
-    def entero(listado):
-        # check3: enteros
-        for k in listado:
-            try:
-                int(k)
-                # arranged_problems ='ok'
-            except:
-                arranged_problems = print('Error: Numbers must only contain digits.')
-                exit()
-                return arranged_problems
-            # check4: hasta 4 digitos
-            if len(k) > 4:
-                arranged_problems = print('Error: Numbers cannot be more than four digits.')
-                exit()
-                return arranged_problems
-
-    entero(primero)
-    entero(segundo)
-
+    #agrego a un conjunto
     def conjunto(listado):
         return todos.append(listado)
-
     # obtengo todos los primeros términos de cada operación
     conjunto(primero)
     conjunto(operador)
@@ -66,17 +49,31 @@ def arithmetic_arranger(problems):
         else:
             arranged_problems = print("Error: Operator must be '+' or '-'.")
             return arranged_problems
+    def entero(entrada1,entrada2):
+        # check3: enteros
+        try:
+            a = int(entrada1)
+            b = int(entrada2)
+            return a,b
+        except:
+            arranged_problems = print('Error: Numbers must only contain digits.')
+            #exit()
+            return arranged_problems
+        # check4: hasta 4 digitos
+        if len(k) > 4:
+            arranged_problems = print('Error: Numbers cannot be more than four digits.')
+            #exit()
+            return arranged_problems
     for i in toditos:
-        # vuelvo a hacer check de enteros
-        #entero(i[0])
-        #entero(i[2])
         # check2: operadores + o -
+        #check enteros a cada valores
+        enteros(i[0],i[2])
         if i[1] == '+':
-            suma = int(i[0]) + int(i[2])
+            suma = a+b
             resultados.append(suma)
             # print(f'Sumando: {suma}')
         elif i[1] == '-':
-            resta = int(i[0]) - int(i[2])
+            resta = a-b
             resultados.append(resta)
             # print(f'Restando: {resta}')
         else:
