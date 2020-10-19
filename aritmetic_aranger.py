@@ -9,6 +9,8 @@ def arithmetic_arranger(problems,display):
     primero=[]
     segundo = []
     operador = []
+    longitud = []
+    relleno = " "
     #check1 :5 problemas
     if len(problems) > 5:
         #máximo de 5 problemas
@@ -68,21 +70,29 @@ def arithmetic_arranger(problems,display):
         else:
             #print("Error: Operator must be '+' or '-'.")
             exit()
+        longitud.append(max(len(i[0]), len(i[2])))
     #print(resultados)
-    toditos = list(zip(primero,operador, segundo,resultados))
+    toditos = list(zip(primero,operador, segundo,resultados,longitud))
     conjunto(resultados)
+    conjunto(longitud)
     """print('¿Cuál es mejor?')
     print(f'Toditos: muestra cada operación con su resultado \n{toditos}')
     print(f"Todos: muestra cada operador por separado. \n{todos}") #--- > esta es mejor"""
-    ren1="" #primer numero
+    reng1="" #primer numero
     reng2=""#simbolo mas segundo numero
     divisor=""#lineas horizontales
     reng3=""#resultados
     for i in toditos:
-        print(i)
-        #debo volver a iterar en cada elemento para sacar el máximo
-        #print(max(len(i)))
+        #componentes: (primero,operador, segundo,resultados,longitud)
+        reng1  += "  "+ i[0].rjust(i[4],relleno) + "    "
+        reng2  += i[1]+" "+ i[2].rjust(i[4],relleno) + "    "
+        divisor+= "-"* len("  "+ i[0].rjust(i[4],relleno))+"    "
+        reng3  += str(i[3]).rjust(len("-"* len("  "+ i[0].rjust(i[4],relleno))),relleno)+"    "
+    print(reng1)
+    print(reng2)
+    print(divisor)
+    print(reng3)
 
 #    return arranged_problems
 
-arithmetic_arranger(["32 + 698", "3801 + 2", "45 + 43", "123 + 49"],True)
+arithmetic_arranger(["32 + 698", "3801 + 2", "9999 + 8878", "123 + 49"],True)
