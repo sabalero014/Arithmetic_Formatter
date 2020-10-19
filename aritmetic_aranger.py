@@ -96,8 +96,7 @@ def arithmetic_arranger(problems,display):
     print(reng2)
     print(divisor)
     print(reng3)"""
-    arranged_problems =print(f'{reng1}\n{reng2}\n{divisor}\n{reng3}')
-
-#    return arranged_problems
+    arranged_problems = print(f'{reng1}\n{reng2}\n{divisor}\n{reng3}')
+    return arranged_problems
 
 arithmetic_arranger(["32 + 698", "3801 + 2", "9999 + 8878", "123 + 49"],True)
