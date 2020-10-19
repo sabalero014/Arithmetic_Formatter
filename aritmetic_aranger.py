@@ -48,9 +48,11 @@ def arithmetic_arranger(problems,display):
     print(todos)"""
     toditos = list(zip(primero,operador, segundo))
     #print(toditos)
-    for i in toditos:
+    for i in operador:
         #check2: operadores + o -
-        if i[1] != '+' or i[1] != '-':
+        if i == "+": pass
+        elif i == "-": pass
+        else:
             print("Error: Operator must be '+' or '-'.")
             exit()
     for i in toditos:
@@ -66,7 +68,8 @@ def arithmetic_arranger(problems,display):
         else:
             #print("Error: Operator must be '+' or '-'.")
             exit()
+    print(resultados)
 
 #    return arranged_problems
 
-arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 * 49"],True)
+arithmetic_arranger(["32 + 698", "3801 + 2", "45 + 43", "123 + 49"],True)
