@@ -39,13 +39,13 @@ def arithmetic_arranger(problems,display):
                 exit()
     entero(primero)
     entero(segundo)
-    """def conjunto (listado):
+    def conjunto (listado):
         return todos.append(listado)
     #obtengo todos los primeros términos de cada operación
     conjunto(primero)
     conjunto(operador)
     conjunto(segundo)
-    print(todos)"""
+    #print(todos)
     toditos = list(zip(primero,operador, segundo))
     #print(toditos)
     for i in operador:
@@ -60,15 +60,28 @@ def arithmetic_arranger(problems,display):
         if i[1] == '+':
             suma=int(i[0])+int(i[2])
             resultados.append(suma)
-            print(f'Sumando: {suma}')
+            #print(f'Sumando: {suma}')
         elif i[1] == '-':
             resta=int(i[0])-int(i[2])
             resultados.append(resta)
-            print(f'Restando: {resta}')
+            #print(f'Restando: {resta}')
         else:
             #print("Error: Operator must be '+' or '-'.")
             exit()
-    print(resultados)
+    #print(resultados)
+    toditos = list(zip(primero,operador, segundo,resultados))
+    conjunto(resultados)
+    """print('¿Cuál es mejor?')
+    print(f'Toditos: muestra cada operación con su resultado \n{toditos}')
+    print(f"Todos: muestra cada operador por separado. \n{todos}") #--- > esta es mejor"""
+    ren1="" #primer numero
+    reng2=""#simbolo mas segundo numero
+    divisor=""#lineas horizontales
+    reng3=""#resultados
+    for i in toditos:
+        print(i)
+        #debo volver a iterar en cada elemento para sacar el máximo
+        #print(max(len(i)))
 
 #    return arranged_problems
 
